@@ -69,7 +69,7 @@ public class Main {
           while (second == LocalDateTime.now().getSecond()){
               speed += 1;
           }
-          System.out.println( time );
+          System.out.println( time + " " + speed/1000000 + "MHz");
       }
 
     }
