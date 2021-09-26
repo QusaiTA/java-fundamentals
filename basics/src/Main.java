@@ -1,4 +1,6 @@
 import java.util.Random;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,6 +13,7 @@ public class Main {
         int turtleCount = 0;
         System.out.println("I own " + turtleCount + " " + pluralize( turtleCount, "turtle") + ".");
         flipNHeads(5);
+        clock();
 
     }
 
@@ -51,5 +54,23 @@ public class Main {
         }
 
         System.out.println(" It took " + trial + " " + pluralize(trial, "flip") + " to flip  " + headNum + " head  in a row");
+    }
+
+    public static void clock(){
+
+      while (true){
+          float speed = 0f;
+          LocalDateTime now = LocalDateTime.now();
+          int hour = now.getHour();
+          int minute = now.getMinute();
+          int second = now.getSecond();
+          String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+
+          while (second == LocalDateTime.now().getSecond()){
+              speed += 1;
+          }
+          System.out.println( time );
+      }
+
     }
 }
