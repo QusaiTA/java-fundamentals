@@ -34,4 +34,35 @@ public class Library {
         return  false;
     }
 
+    public static double calculateAverage(double [] arr){
+        double sum =0;
+        int count=0;
+        double avg;
+        for(int i = 0; i < arr.length ; i++){
+            sum += arr[i];
+            count ++;
+        }
+        avg = sum/count;
+        return avg;
+    }
+
+    public static int[] lowestAverage(int[][] arr) {
+        double average = 0 , lowestAverage = Integer.MAX_VALUE;
+        int lowestAverageArr[] = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            average = 0;
+            for (int j = 0 ; j < arr[i].length ; j++){
+                average+=arr[i][j];
+            }
+            average /= arr[i].length;
+            if(average < lowestAverage) {
+                lowestAverage = average;
+                lowestAverageArr = arr[i];
+            }
+
+        }
+        return lowestAverageArr;
+    }
+
+
 }
