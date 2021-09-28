@@ -36,7 +36,7 @@ class LibraryTest {
     public void averageMethod() {
         Library classUnderTest = new Library();
         double[] avgArr = {10, 3, 3, 4,20,20,10,10};
-        assertEquals(10, classUnderTest.calculateAverage(avgArr), "average should return the average of array equal to 5");
+        assertEquals(10, classUnderTest.calculateAverage(avgArr), "average should return the average of array equal to 10");
     }
     @Test
     @DisplayName("lowestAvg should return the lowest array in the parent array which is {55, 54, 60, 53, 59, 57, 61}")
