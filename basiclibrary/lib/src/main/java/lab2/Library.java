@@ -67,7 +67,7 @@ public class Library {
         return lowestAverageArr;
     }
 
-    public void weatherData(int [][] arr){
+    public int weatherData(int [][] arr){
         Set<Integer> degrees = new HashSet<>();
         int minValue = Integer.MAX_VALUE;
         int maxValue = Integer.MIN_VALUE;
@@ -91,6 +91,8 @@ public class Library {
                 System.out.println("Never saw temperature:" + i);
             }
         }
+
+        return maxValue;
 
     }
     public static String tally(List<String> votes){

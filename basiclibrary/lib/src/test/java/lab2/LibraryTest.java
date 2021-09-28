@@ -5,6 +5,11 @@ package lab2;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static lab2.Library.tally;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
@@ -53,5 +58,44 @@ class LibraryTest {
         assertArrayEquals(expectedArray, classUnderTest.lowestAverage(weeklyMonthTemperatures),
                 "lowestAvg should return the lowest array in the parent array which is {55, 54, 60, 53, 59, 57, 61}");
     }
+
+    @Test
+    @DisplayName("should return the maximum value = 72")
+    public void weatherData() {
+        Library classUnderTest = new Library();
+        int[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        int expectedValue = 72;
+
+        assertEquals(expectedValue, classUnderTest.weatherData(weeklyMonthTemperatures),
+                "should return the maximum value = 72");
+    }
+
+    @Test
+    @DisplayName("should return the winner : 'Bush'")
+    public void tally() {
+        Library classUnderTest = new Library();
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        String winner = "Bush";
+
+        assertEquals(winner, classUnderTest.tally(votes),
+                "should return the winner : 'Bush'");
+    }
+
+
 
    }
