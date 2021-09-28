@@ -47,7 +47,7 @@ public class Library {
     }
 
     public static int[] lowestAverage(int[][] arr) {
-        double average = 0 , lowestAverage = Integer.MAX_VALUE;
+        double average = 0 , lowestAverage = Double.MAX_VALUE;
         int lowestAverageArr[] = arr[0];
         for (int i = 0; i < arr.length; i++) {
             average = 0;
