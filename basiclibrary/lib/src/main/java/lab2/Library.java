@@ -5,7 +5,7 @@ package lab2;
 
 import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class Library {
     public boolean someLibraryMethod() {
@@ -93,6 +93,29 @@ public class Library {
         }
 
     }
+    public static String tally(List<String> votes){
+        Map<String,Integer> votesNum = new HashMap<>();
+        for(String winerWord: votes){
+            if(!votesNum.containsKey(winerWord)){
+                votesNum.put(winerWord,1);
+            } else {
+                int votesValue = votesNum.get(winerWord);
+                votesValue++;
+                votesNum.put(winerWord,votesValue);
+            }
+        }
+
+        String winner = "";
+        for(Map.Entry<String,Integer>element :votesNum.entrySet()){
+            if(element.getValue() == Collections.max(votesNum.values())){
+                winner = element.getKey();
+            }
+        }
+        return winner;
+    }
 
 
 }
+
+
+

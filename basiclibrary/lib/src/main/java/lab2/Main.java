@@ -1,6 +1,10 @@
 package lab2;
 
 import java.util.Arrays;
+import java.util.*;
+
+import static lab2.Library.tally;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -21,5 +25,21 @@ public class Main {
         System.out.println(demo.calculateAverage(arr2));
         System.out.println(Arrays.toString(demo.lowestAverage(weeklyMonthTemperatures)));
         demo.weatherData(weeklyMonthTemperatures);
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        String winner = tally(votes);
+        System.out.println(winner + " received the most votes!");
+
     }
+
+
 }
