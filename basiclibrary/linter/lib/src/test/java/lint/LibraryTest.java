@@ -3,6 +3,7 @@
  */
 package lint;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;
@@ -11,10 +12,57 @@ import java.nio.file.Paths;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    @Test void someLibraryMethodReturnsTrue() {
+    @Test
+    void someLibraryMethodReturnsTrue() {
         Library classUnderTest = new Library();
 
         assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
     }
+
+    @Test
+    @DisplayName("should return no Errors")
+    void linter() {
+        Library classUnderTest = new Library();
+        Path noError = Paths.get("C:\\Users\\STUDENT\\401\\java-fundamentals\\basiclibrary\\linter\\resources\\noError.js");
+        assertEquals(0, classUnderTest.linter(noError), "should return no Errors");
+    }
+
+    @Test
+    @DisplayName("should return One Error")
+    void linter2() {
+        Library classUnderTest = new Library();
+        Path oneError = Paths.get("C:\\Users\\STUDENT\\401\\java-fundamentals\\basiclibrary\\linter\\resources\\oneError.js");
+        assertEquals(1, classUnderTest.linter(oneError), "should return One Error");
+
+    }
+
+    @Test
+    @DisplayName("should return Few Error")
+    void linter3() {
+        Library classUnderTest = new Library();
+        Path fewError = Paths.get("C:\\Users\\STUDENT\\401\\java-fundamentals\\basiclibrary\\linter\\resources\\fewError.js");
+        assertEquals(3, classUnderTest.linter(fewError), "should return One Error");
+
+    }
+
+    @Test
+    @DisplayName("should return Many Error")
+    void linter4() {
+        Library classUnderTest = new Library();
+        Path ManyError = Paths.get("C:\\Users\\STUDENT\\401\\java-fundamentals\\basiclibrary\\linter\\resources\\ManyError.js");
+        assertEquals(9, classUnderTest.linter(ManyError), "should return Many Error");
+
+    }
+
+    @Test
+    @DisplayName("should return Empty file")
+    void linter5() {
+        Library classUnderTest = new Library();
+        Path emptyFile = Paths.get("C:\\Users\\STUDENT\\401\\java-fundamentals\\basiclibrary\\linter\\resources\\emptyFile.js");
+        assertEquals(0, classUnderTest.linter(emptyFile), "should return Empty file");
+
+    }
+
+
 
 }
