@@ -20,5 +20,6 @@ public class Main {
         System.out.println(demo.containsDuplicates(arr));
         System.out.println(demo.calculateAverage(arr2));
         System.out.println(Arrays.toString(demo.lowestAverage(weeklyMonthTemperatures)));
+        demo.weatherData(weeklyMonthTemperatures);
     }
 }
