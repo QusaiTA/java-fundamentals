@@ -2,7 +2,7 @@
 
 **this repo contain JAVA BASICS folder that contain a simple problem to solve ..**
 
- - pluralize function.
+ - pluralize function : that add "S" if the number equal to 0 or greater than 1.
  - flip heads function.
  - clock function.
 
