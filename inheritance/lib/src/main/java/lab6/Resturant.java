@@ -35,10 +35,12 @@ public class Resturant implements reviewList {
     }
 
     @Override
-    public void addReview(String body, String author, int stars) {
+    public Review addReview(String body, String author, int stars) {
         Review newReview = new Review(body,author,stars);
         review.add(newReview);
         updateRating(review);
+
+        return newReview;
 
     }
 
